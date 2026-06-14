@@ -1,212 +1,163 @@
-// =============================================
-// ISHIHARA — Main Script
-// =============================================
+// ISHIHARA — shared script
 
-// --- Header scroll effect ---
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-}, { passive: true });
-
-// --- Hamburger menu ---
-const hamburger = document.getElementById('hamburger');
-let mobileNav, mobileOverlay;
-
-function buildMobileMenu() {
-  mobileOverlay = document.createElement('div');
-  mobileOverlay.className = 'mobile-overlay';
-
-  mobileNav = document.createElement('nav');
-  mobileNav.className = 'mobile-nav';
-  mobileNav.innerHTML = `
-    <a href="#services" class="mobile-link">サービス</a>
-    <a href="#works" class="mobile-link">制作実績</a>
-    <a href="#pricing" class="mobile-link">料金</a>
-    <a href="#faq" class="mobile-link">FAQ</a>
-    <a href="#contact" class="mobile-link">お問い合わせ</a>
-  `;
-
-  document.body.appendChild(mobileOverlay);
-  document.body.appendChild(mobileNav);
-
-  mobileOverlay.addEventListener('click', closeMobileMenu);
-  mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMobileMenu);
-  });
+// Header scroll
+const hdr = document.querySelector('.hdr');
+if (hdr) {
+  const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 30);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
-function openMobileMenu() {
-  mobileNav.classList.add('open');
-  mobileOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  hamburger.classList.add('active');
+// Mobile menu
+const burger = document.querySelector('.burger');
+if (burger) {
+  const mnav = document.querySelector('.mnav');
+  const mov = document.querySelector('.mov');
+  const close = () => { mnav.classList.remove('open'); mov.classList.remove('open'); document.body.style.overflow=''; };
+  const open = () => { mnav.classList.add('open'); mov.classList.add('open'); document.body.style.overflow='hidden'; };
+  burger.addEventListener('click', () => mnav.classList.contains('open') ? close() : open());
+  if (mov) mov.addEventListener('click', close);
+  if (mnav) mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 }
 
-function closeMobileMenu() {
-  mobileNav.classList.remove('open');
-  mobileOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-  hamburger.classList.remove('active');
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const sibs = el.parentElement ? Array.from(el.parentElement.querySelectorAll(':scope > .reveal')) : [el];
+        const idx = Math.max(0, sibs.indexOf(el));
+        setTimeout(() => el.classList.add('vis'), idx * 90);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
 }
 
-buildMobileMenu();
-hamburger.addEventListener('click', () => {
-  if (mobileNav.classList.contains('open')) {
-    closeMobileMenu();
-  } else {
-    openMobileMenu();
-  }
-});
-
-// --- Intersection Observer for animations ---
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const siblings = Array.from(el.parentElement.querySelectorAll('.reveal'));
-      const idx = siblings.indexOf(el);
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, idx * 80);
-      revealObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// Hero fade-up elements
-const heroObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.fade-up').forEach(el => heroObserver.observe(el));
-
-// Trigger hero animations on load
+// Fade (hero on load)
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-  }, 200);
+  setTimeout(() => document.querySelectorAll('.fade').forEach(el => el.classList.add('vis')), 120);
 });
 
-// --- FAQ Accordion ---
+// Number counters
+function countUp(el) {
+  const target = parseFloat(el.dataset.target);
+  const dur = 1500, start = performance.now();
+  const isFloat = el.dataset.target.includes('.');
+  function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = eased * target;
+    el.textContent = isFloat ? val.toFixed(1) : Math.floor(val).toLocaleString();
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = isFloat ? target.toFixed(1) : target.toLocaleString();
+  }
+  requestAnimationFrame(tick);
+}
+const counters = document.querySelectorAll('[data-target]');
+if (counters.length) {
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { countUp(entry.target); cio.unobserve(entry.target); }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(el => cio.observe(el));
+}
+
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
-    const item = btn.closest('.faq-item');
-    const answer = item.querySelector('.faq-a');
-    const isOpen = btn.classList.contains('open');
-
-    document.querySelectorAll('.faq-q.open').forEach(other => {
-      other.classList.remove('open');
-      other.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
-    });
-
-    if (!isOpen) {
-      btn.classList.add('open');
-      answer.classList.add('open');
-    }
+    const a = btn.nextElementSibling;
+    const open = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(o => { o.classList.remove('open'); o.nextElementSibling.classList.remove('open'); });
+    if (!open) { btn.classList.add('open'); a.classList.add('open'); }
   });
 });
 
-// --- Form submission simulation ---
-function handleFormSubmit(formId) {
-  const form = document.getElementById(formId);
+// Form submit -> Formspree -> modal
+function bindForm(id) {
+  const form = document.getElementById(id);
   if (!form) return;
-
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
+    const orig = btn.innerHTML;
+    btn.innerHTML = '送信中...'; btn.disabled = true; btn.style.opacity = '0.7';
 
-    btn.textContent = '送信中...';
-    btn.disabled = true;
-    btn.style.opacity = '0.7';
-
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.disabled = false;
-      btn.style.opacity = '';
-      form.reset();
-      document.getElementById('modal').classList.add('active');
-    }, 1200);
-  });
-}
-
-handleFormSubmit('contactForm');
-handleFormSubmit('diagnosisForm');
-
-// --- Smooth scroll for nav links ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+    // If the form's action still has the placeholder, warn instead of pretending to send.
+    const action = form.getAttribute('action') || '';
+    if (action.includes('REPLACE_WITH_YOUR_ID')) {
+      btn.innerHTML = orig; btn.disabled = false; btn.style.opacity = '';
+      alert('フォームの送信先（Formspreeのエンドポイント）がまだ設定されていません。contact.html の form タグの action を、ご自身のFormspree URLに差し替えてください。');
+      return;
     }
-  });
-});
 
-// --- Staggered reveal for cards ---
-const cardGroups = ['.services-grid', '.works-grid', '.pricing-grid', '.problem-cards'];
-cardGroups.forEach(selector => {
-  const grid = document.querySelector(selector);
-  if (!grid) return;
-  const cards = grid.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    if (entries.some(e => e.isIntersecting)) {
-      cards.forEach((card, i) => {
-        setTimeout(() => card.classList.add('visible'), i * 100);
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
       });
-      obs.disconnect();
-    }
-  }, { threshold: 0.05 });
-  if (cards.length) obs.observe(grid);
-});
-
-// --- Number counter animation ---
-function animateNumber(el) {
-  const target = parseInt(el.dataset.target);
-  const duration = 1800;
-  const start = performance.now();
-
-  function update(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(eased * target);
-    el.textContent = current.toLocaleString();
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = target.toLocaleString();
-  }
-
-  requestAnimationFrame(update);
-}
-
-// Observe stat numbers
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('[data-target]').forEach(animateNumber);
-      statsObserver.unobserve(entry.target);
+      btn.innerHTML = orig; btn.disabled = false; btn.style.opacity = '';
+      if (res.ok) {
+        form.reset();
+        const m = document.getElementById('modal');
+        if (m) m.classList.add('active');
+      } else {
+        let msg = '送信に失敗しました。お手数ですが、時間をおいて再度お試しください。';
+        try {
+          const data = await res.json();
+          if (data && data.errors && data.errors.length) {
+            msg = data.errors.map(er => er.message).join('\n');
+          }
+        } catch (_) {}
+        alert(msg);
+      }
+    } catch (err) {
+      btn.innerHTML = orig; btn.disabled = false; btn.style.opacity = '';
+      alert('通信エラーが発生しました。ネットワークをご確認のうえ、再度お試しください。');
     }
   });
-}, { threshold: 0.5 });
+}
+bindForm('contactForm');
+bindForm('diagForm');
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) statsObserver.observe(heroStats);
+// Modal close
+const modal = document.getElementById('modal');
+if (modal) {
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+  const cb = modal.querySelector('[data-close]');
+  if (cb) cb.addEventListener('click', () => modal.classList.remove('active'));
+}
 
-// --- Close modal on outside click ---
-document.getElementById('modal').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('modal')) {
-    document.getElementById('modal').classList.remove('active');
-  }
+// Smooth scroll for same-page anchors
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+    if (href === '#' || href.length < 2) return;
+    const t = document.querySelector(href);
+    if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
+  });
 });
+
+// Pricing toggle (one-time vs subscription)
+(function(){
+  const toggle = document.querySelector('.price-toggle');
+  if (!toggle) return;
+  const btns = toggle.querySelectorAll('button');
+  const slider = toggle.querySelector('.slider');
+  const sets = document.querySelectorAll('.price-set');
+  btns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      slider.classList.toggle('right', i === 1);
+      sets.forEach(s => s.classList.remove('active'));
+      const target = document.querySelector(`.price-set[data-set="${btn.dataset.set}"]`);
+      if (target) target.classList.add('active');
+    });
+  });
+})();

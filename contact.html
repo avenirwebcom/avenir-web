@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ・無料相談 — Avenir Web</title>
+<meta name="description" content="Avenir Webへのお問い合わせ。無料相談・無料サンプル制作・無料Web診断を受け付けています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="index.html" class="brand">Avenir Web<span class="dot">.</span></a>
+    <nav class="nav">
+      <a href="works.html">サンプル</a>
+      <a href="pricing.html">料金</a>
+      <a href="about.html">会社</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="cta">無料相談</a>
+    </nav>
+    <button class="burger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mnav">
+  <a href="works.html">サンプル<span class="num">01</span></a>
+  <a href="pricing.html">料金<span class="num">02</span></a>
+  <a href="about.html">会社<span class="num">03</span></a>
+  <a href="faq.html">FAQ<span class="num">04</span></a>
+  <a href="contact.html">無料相談<span class="num">05</span></a>
+</nav>
+<div class="mov"></div>
+
+<section class="phero">
+  <div class="wrap phero-in">
+    <div class="crumb"><a href="index.html">Home</a><span>/</span>Contact</div>
+    <h1 class="fade">Contact<span class="ja">まずは、話しましょう</span></h1>
+    <p class="fade">費用のこと、期間のこと、何から始めればいいか。内容が固まっていない段階でも大丈夫です。返信は翌営業日以内にお送りします。</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mykalepo" method="POST">
+        <input type="hidden" name="_subject" value="【Avenir Web】サイトからのお問い合わせ">
+        <div class="field-row">
+          <div class="field"><label>お名前 <span class="req">必須</span></label><input type="text" name="name" placeholder="山田 太郎" required></div>
+          <div class="field"><label>会社名・屋号</label><input type="text" name="company" placeholder="株式会社〇〇"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>メールアドレス <span class="req">必須</span></label><input type="email" name="email" placeholder="info@example.com" required></div>
+          <div class="field"><label>電話番号</label><input type="tel" name="tel" placeholder="090-0000-0000"></div>
+        </div>
+        <div class="field"><label>業種</label>
+          <select name="industry"><option value="">選択してください</option><option>飲食・カフェ</option><option>美容・サロン</option><option>建設・工務店</option><option>医療・治療院</option><option>士業・コンサルタント</option><option>小売・物販</option><option>農業・食品</option><option>その他</option></select>
+        </div>
+        <div class="field"><label>お問い合わせ種別 <span class="req">必須</span></label>
+          <select name="type" required><option value="">選択してください</option><option>新規ホームページ制作</option><option>リニューアル</option><option>無料Web診断の申し込み</option><option>無料サンプル制作の依頼</option><option>料金について</option><option>その他</option></select>
+        </div>
+        <div class="field"><label>メッセージ <span class="req">必須</span></label><textarea name="message" rows="5" placeholder="ご質問・ご要望などお気軽にどうぞ。「何から始めればいいか分からない」でも大丈夫です。" required></textarea></div>
+        <button type="submit" class="btn btn-green full btn-lg">送信する <span class="arr">→</span></button>
+        <p class="form-note">送信後、自動返信メールが届きます。届かない場合は迷惑メールフォルダをご確認ください。</p>
+      </form>
+      <aside class="contact-side reveal">
+        <div class="cinfo">
+          <div class="cinfo-item"><div class="cinfo-l">Email</div><div class="cinfo-v">avenir.web.com@gmail.com</div></div>
+          <div class="cinfo-item"><div class="cinfo-l">営業時間</div><div class="cinfo-v">平日 9:00〜18:00</div><div class="cinfo-note">土日祝はメールのみ受付</div></div>
+          <div class="cinfo-item"><div class="cinfo-l">対応エリア</div><div class="cinfo-v">全国対応（オンライン）</div></div>
+        </div>
+        <div class="promise">
+          <h4>Avenir Webの約束</h4>
+          <ul>
+            <li>しつこい営業電話は一切しません</li>
+            <li>見積もりはすべて無料・明瞭会計</li>
+            <li>断られても嫌な顔はしません</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <div class="modal-ico"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+    <h3>送信完了しました</h3>
+    <p>お問い合わせありがとうございます。翌営業日以内にご返信いたします。</p>
+    <button class="btn btn-green" data-close>閉じる</button>
+  </div>
+</div><footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-top">
+      <div class="ftr-brand"><a href="index.html" class="brand">Avenir Web<span class="dot">.</span></a><p>ホームページのない営業所に、デジタルの窓を。中小企業・個人事業主のためのWeb制作。</p></div>
+      <div class="ftr-col"><h5>Service</h5><a href="index.html#services">ホームページ制作</a><a href="pricing.html">料金プラン</a><a href="contact.html">無料サンプル制作</a><a href="contact.html">無料Web診断</a></div>
+      <div class="ftr-col"><h5>Company</h5><a href="works.html">制作サンプル</a><a href="about.html">会社案内</a><a href="faq.html">よくある質問</a><a href="contact.html">お問い合わせ</a></div>
+      <div class="ftr-col"><h5>Contact</h5><a href="mailto:avenir.web.com@gmail.com">avenir.web.com@gmail.com</a><a href="#">平日 9:00〜18:00</a><a href="contact.html">全国対応（オンライン）</a></div>
+    </div>
+    <div class="ftr-bot"><p>© 2024 Avenir Web. All rights reserved.</p><div class="ftr-legal"><a href="#">プライバシーポリシー</a><a href="#">特定商取引法に基づく表記</a></div></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

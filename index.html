@@ -1,643 +1,209 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISHIHARA | ホームページ制作 — あなたのビジネスをデジタルへ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avenir Web — 成果につながるホームページ制作</title>
+<meta name="description" content="中小企業・個人事業主のためのホームページ制作。設計とコピーで、問い合わせにつながるサイトを。無料診断・無料サンプル制作対応。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ========== NAV ========== -->
-  <header id="header">
-    <nav class="nav-inner">
-      <a href="#" class="logo">ISHIHARA<span class="logo-dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#services">サービス</a></li>
-        <li><a href="#works">制作実績</a></li>
-        <li><a href="#pricing">料金</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact" class="nav-cta">無料相談</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="index.html" class="brand">Avenir Web<span class="dot">.</span></a>
+    <nav class="nav">
+      <a href="works.html">サンプル</a>
+      <a href="pricing.html">料金</a>
+      <a href="about.html">会社</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="cta">無料相談</a>
     </nav>
-  </header>
+    <button class="burger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mnav">
+  <a href="works.html">サンプル<span class="num">01</span></a>
+  <a href="pricing.html">料金<span class="num">02</span></a>
+  <a href="about.html">会社<span class="num">03</span></a>
+  <a href="faq.html">FAQ<span class="num">04</span></a>
+  <a href="contact.html">無料相談<span class="num">05</span></a>
+</nav>
+<div class="mov"></div>
 
-  <!-- ========== HERO ========== -->
-  <section id="hero">
-    <div class="hero-bg">
-      <div class="hero-orb orb1"></div>
-      <div class="hero-orb orb2"></div>
-      <div class="hero-orb orb3"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-tag fade"><span class="leaf-ico"><svg viewBox="0 0 24 24"><path d="M12 2C7 7 5 11 5 15a7 7 0 0014 0c0-4-2-8-7-13z"/></svg></span> 中小企業・個人事業主のためのWeb制作</div>
+    <h1 class="hero-h1 fade">
+      <span class="ja">商売を、</span>
+      <span class="leaf">広げる。</span>
+    </h1>
+    <p class="hero-sub fade">作って終わりのホームページは作りません。「誰に・何を・どう伝えるか」を設計し、問い合わせにつながるサイトをつくります。</p>
+    <div class="hero-cta fade">
+      <a href="contact.html" class="btn btn-green btn-lg">無料で相談する <span class="arr">→</span></a>
+      <a href="works.html" class="btn btn-ghost btn-lg">制作サンプルを見る</a>
     </div>
-    <div class="hero-content">
-      <p class="hero-label fade-up">WEB DESIGN & DEVELOPMENT</p>
-      <h1 class="hero-headline fade-up">
-        ホームページで、<br>
-        あなたの商売は<br>
-        <span class="gradient-text">もっと広がれる。</span>
-      </h1>
-      <p class="hero-sub fade-up">
-        「うちには関係ない」と思っていたあの一歩が、<br class="sp-none">
-        実は次のお客様との出会いを生む扉になる。
-      </p>
-      <div class="hero-btns fade-up">
-        <a href="#diagnosis" class="btn btn-primary">無料診断を受ける</a>
-        <a href="#sample" class="btn btn-ghost">サンプルを見る</a>
-      </div>
-      <div class="hero-stats fade-up">
-        <div class="stat">
-          <span class="stat-num">230<small>+</small></span>
-          <span class="stat-label">制作実績</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">98<small>%</small></span>
-          <span class="stat-label">顧客満足度</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">14<small>日</small></span>
-          <span class="stat-label">最短納期</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>SCROLL</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ========== PROBLEM ========== -->
-  <section id="problem" class="section-light">
-    <div class="container">
-      <div class="problem-grid">
-        <div class="problem-text reveal">
-          <p class="section-eyebrow">REALITY</p>
-          <h2 class="section-title">日本の中小企業の<br><span class="accent">約6割</span>に、<br>まだホームページがない。</h2>
-          <p class="section-body">
-            地図アプリ・SNS・Google検索——現代人が新しいお店や業者を探すとき、最初に手にするのはスマートフォンです。ホームページがない企業は、その瞬間に「存在しない企業」として扱われてしまいます。
-          </p>
-          <p class="section-body">
-            口コミや紹介だけで成り立っている今の商売でも、ホームページがあれば<strong>信頼感・問い合わせ数・売上</strong>が変わります。ISHIHARAは、その一歩を一緒に踏み出すパートナーです。
-          </p>
-        </div>
-        <div class="problem-cards reveal">
-          <div class="problem-card">
-            <div class="pcard-icon">🔍</div>
-            <h3>検索されない</h3>
-            <p>Googleで業種＋地域名を検索されても、ホームページがなければ候補にすら上がらない。</p>
-          </div>
-          <div class="problem-card">
-            <div class="pcard-icon">📱</div>
-            <h3>信頼されない</h3>
-            <p>初めて連絡する前に「ホームページで確認」するのが今の常識。情報がないと不安にさせてしまう。</p>
-          </div>
-          <div class="problem-card">
-            <div class="pcard-icon">🌙</div>
-            <h3>営業が24時間止まる</h3>
-            <p>ホームページは眠らない営業マン。深夜でも休日でも、あなたの代わりに仕事の説明をしてくれる。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SERVICES ========== -->
-  <section id="services" class="section-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow light">SERVICE</p>
-        <h2 class="section-title light">ISHIHARAができること</h2>
-        <p class="section-desc light">ゼロから丁寧に。あなたのビジネスに最適なWebサイトを、一緒に作ります。</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-num">01</div>
-          <div class="service-icon">✦</div>
-          <h3>ホームページ制作</h3>
-          <p>会社・店舗・事務所など業種を問わず対応。スマートフォンでも美しく見えるレスポンシブデザインで制作します。</p>
-          <ul class="service-features">
-            <li>オリジナルデザイン</li>
-            <li>スマホ完全対応</li>
-            <li>SEO基本設定込み</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-num">02</div>
-          <div class="service-icon">◈</div>
-          <h3>無料サンプルHP作成</h3>
-          <p>発注前に実際のデザインを確認できます。お客様の業種・雰囲気に合わせてプレビューを無料で制作します。</p>
-          <ul class="service-features">
-            <li>発注前に確認可能</li>
-            <li>3〜5ページ分のプレビュー</li>
-            <li>修正依頼も無料</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-num">03</div>
-          <div class="service-icon">⊕</div>
-          <h3>SEO対策・集客支援</h3>
-          <p>作って終わりではなく、Googleに見つけてもらえるサイト作りを意識した構造設計と継続サポートを提供します。</p>
-          <ul class="service-features">
-            <li>キーワード戦略立案</li>
-            <li>Googleビジネス設定</li>
-            <li>アクセス解析レポート</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-num">04</div>
-          <div class="service-icon">◎</div>
-          <h3>更新・保守管理</h3>
-          <p>公開後もお任せください。定期的なセキュリティ更新、コンテンツ追加、問い合わせ対応など継続的にサポートします。</p>
-          <ul class="service-features">
-            <li>月額保守プラン</li>
-            <li>コンテンツ更新代行</li>
-            <li>24時間障害監視</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FREE DIAGNOSIS ========== -->
-  <section id="diagnosis" class="section-accent">
-    <div class="container">
-      <div class="diagnosis-wrap reveal">
-        <div class="diagnosis-text">
-          <p class="section-eyebrow">FREE</p>
-          <h2 class="section-title">無料Web診断</h2>
-          <p class="section-body">
-            現在のビジネス状況をヒアリングし、ホームページがあることで<strong>どれくらいの効果が見込めるか</strong>を無料でお伝えします。「必要かどうか分からない」という方こそ、ぜひお申し込みください。
-          </p>
-          <ul class="diagnosis-benefits">
-            <li><span class="check">✓</span> 競合他社のWeb状況を調査</li>
-            <li><span class="check">✓</span> 月間検索数・集客ポテンシャルを試算</li>
-            <li><span class="check">✓</span> 最適なHP戦略をご提案</li>
-            <li><span class="check">✓</span> 費用対効果シミュレーション</li>
-          </ul>
-        </div>
-        <div class="diagnosis-form-wrap">
-          <form class="diagnosis-form" id="diagnosisForm">
-            <h3>まずは業種を教えてください</h3>
-            <div class="form-group">
-              <select name="industry" required>
-                <option value="">業種を選択</option>
-                <option>飲食・カフェ</option>
-                <option>美容・サロン</option>
-                <option>建設・工務店</option>
-                <option>医療・治療院</option>
-                <option>士業・コンサルタント</option>
-                <option>小売・物販</option>
-                <option>農業・食品</option>
-                <option>その他</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <input type="text" name="name" placeholder="お名前（会社名）" required>
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="メールアドレス" required>
-            </div>
-            <button type="submit" class="btn btn-dark full-width">無料診断を申し込む →</button>
-            <p class="form-note">* 返信は翌営業日以内。しつこい営業は一切しません。</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FREE SAMPLE ========== -->
-  <section id="sample" class="section-light">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">FREE SAMPLE</p>
-        <h2 class="section-title">作ってから決めてください。</h2>
-        <p class="section-desc">実際に制作したサンプルサイトを見てから、発注するかどうか決めていただけます。<br>気に入らなければ、費用は一切かかりません。</p>
-      </div>
-      <div class="sample-flow reveal">
-        <div class="flow-step">
-          <div class="flow-num">STEP 1</div>
-          <div class="flow-icon">📋</div>
-          <h4>ヒアリング</h4>
-          <p>業種・雰囲気・参考サイトなどをお伝えいただきます（30分〜）</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="flow-num">STEP 2</div>
-          <div class="flow-icon">🎨</div>
-          <h4>サンプル制作</h4>
-          <p>3〜5日でTOPページを含む3ページ分のプレビューを制作します</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="flow-num">STEP 3</div>
-          <div class="flow-icon">👀</div>
-          <h4>プレビュー確認</h4>
-          <p>実際のURLでデザイン・レイアウトをスマホでも確認いただけます</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="flow-num">STEP 4</div>
-          <div class="flow-icon">🤝</div>
-          <h4>ご契約</h4>
-          <p>気に入ったら本制作へ。気に入らなければ費用ゼロでキャンセル可能です</p>
-        </div>
-      </div>
-      <div class="sample-cta reveal">
-        <a href="#contact" class="btn btn-primary">サンプル制作を依頼する</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== WORKS ========== -->
-  <section id="works" class="section-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow light">WORKS</p>
-        <h2 class="section-title light">制作実績</h2>
-        <p class="section-desc light">様々な業種・規模のホームページを制作してきました。</p>
-      </div>
-      <div class="works-grid">
-        <div class="work-card reveal">
-          <div class="work-thumb" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
-            <div class="work-thumb-label">建設・工務店</div>
-          </div>
-          <div class="work-info">
-            <h4>山田建設株式会社</h4>
-            <p>静岡県・建設業</p>
-            <div class="work-tags">
-              <span>コーポレートサイト</span>
-              <span>施工実績ギャラリー</span>
-            </div>
-            <div class="work-result">
-              <span class="result-label">成果</span>
-              <span class="result-text">問い合わせ月3件 → 月18件へ増加</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-card reveal">
-          <div class="work-thumb" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);">
-            <div class="work-thumb-label">医療・治療院</div>
-          </div>
-          <div class="work-info">
-            <h4>花咲き鍼灸整骨院</h4>
-            <p>神奈川県・治療院</p>
-            <div class="work-tags">
-              <span>予約フォーム</span>
-              <span>院内紹介</span>
-            </div>
-            <div class="work-result">
-              <span class="result-label">成果</span>
-              <span class="result-text">新患率が制作前比 2.4倍に</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-card reveal">
-          <div class="work-thumb" style="background: linear-gradient(135deg, #c94b4b 0%, #4b134f 100%);">
-            <div class="work-thumb-label">飲食・ラーメン</div>
-          </div>
-          <div class="work-info">
-            <h4>麺処 悠々亭</h4>
-            <p>東京都・飲食業</p>
-            <div class="work-tags">
-              <span>メニューページ</span>
-              <span>Googleマップ連携</span>
-            </div>
-            <div class="work-result">
-              <span class="result-label">成果</span>
-              <span class="result-text">遠方からの来客が月30%増加</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-card reveal">
-          <div class="work-thumb" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-            <div class="work-thumb-label">ペット・サロン</div>
-          </div>
-          <div class="work-info">
-            <h4>ペットサロン Miu</h4>
-            <p>埼玉県・ペット関連</p>
-            <div class="work-tags">
-              <span>ビフォーアフター</span>
-              <span>料金ページ</span>
-            </div>
-            <div class="work-result">
-              <span class="result-label">成果</span>
-              <span class="result-text">Instagram連携で予約が常時満員に</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-card reveal">
-          <div class="work-thumb" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-            <div class="work-thumb-label">士業・会計</div>
-          </div>
-          <div class="work-info">
-            <h4>佐藤税務会計事務所</h4>
-            <p>千葉県・税理士事務所</p>
-            <div class="work-tags">
-              <span>サービス紹介</span>
-              <span>実績・事例</span>
-            </div>
-            <div class="work-result">
-              <span class="result-label">成果</span>
-              <span class="result-text">顧問契約の新規獲得が年4件 → 14件</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-card reveal">
-          <div class="work-thumb" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-            <div class="work-thumb-label">農業・直売</div>
-          </div>
-          <div class="work-info">
-            <h4>木村農園</h4>
-            <p>長野県・農業・直売</p>
-            <div class="work-tags">
-              <span>オンラインショップ</span>
-              <span>農園紹介</span>
-            </div>
-            <div class="work-result">
-              <span class="result-label">成果</span>
-              <span class="result-text">直販売上が前年比160%に</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PRICING ========== -->
-  <section id="pricing" class="section-light">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">PRICING</p>
-        <h2 class="section-title">料金プラン</h2>
-        <p class="section-desc">すべてのプランに無料サンプル制作・SEO基本設定が含まれます。<br>別途ドメイン・サーバー費用（年間約1.5万円〜）がかかります。</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card reveal">
-          <div class="pricing-header">
-            <p class="plan-name">ライト</p>
-            <div class="plan-price">
-              <span class="price-yen">¥</span>
-              <span class="price-num">88,000</span>
-              <span class="price-tax">税込</span>
-            </div>
-            <p class="plan-desc">はじめてのHP作成に</p>
-          </div>
-          <ul class="plan-features">
-            <li><span class="feat-check">✓</span> 最大5ページ</li>
-            <li><span class="feat-check">✓</span> レスポンシブデザイン</li>
-            <li><span class="feat-check">✓</span> お問い合わせフォーム</li>
-            <li><span class="feat-check">✓</span> SEO基本設定</li>
-            <li><span class="feat-check">✓</span> Google Analytics設定</li>
-            <li class="feat-disabled">✗ ブログ・更新機能</li>
-            <li class="feat-disabled">✗ EC・予約機能</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline full-width">お問い合わせ</a>
-        </div>
-        <div class="pricing-card featured reveal">
-          <div class="popular-badge">人気No.1</div>
-          <div class="pricing-header">
-            <p class="plan-name">スタンダード</p>
-            <div class="plan-price">
-              <span class="price-yen">¥</span>
-              <span class="price-num">198,000</span>
-              <span class="price-tax">税込</span>
-            </div>
-            <p class="plan-desc">本格的に集客したい方に</p>
-          </div>
-          <ul class="plan-features">
-            <li><span class="feat-check">✓</span> 最大10ページ</li>
-            <li><span class="feat-check">✓</span> オリジナルデザイン</li>
-            <li><span class="feat-check">✓</span> お問い合わせフォーム</li>
-            <li><span class="feat-check">✓</span> SEO高度設定</li>
-            <li><span class="feat-check">✓</span> Google Analytics設定</li>
-            <li><span class="feat-check">✓</span> ブログ・更新機能</li>
-            <li class="feat-disabled">✗ EC・予約機能</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary full-width">お問い合わせ</a>
-        </div>
-        <div class="pricing-card reveal">
-          <div class="pricing-header">
-            <p class="plan-name">プレミアム</p>
-            <div class="plan-price">
-              <span class="price-yen">¥</span>
-              <span class="price-num">328,000</span>
-              <span class="price-tax">税込〜</span>
-            </div>
-            <p class="plan-desc">機能・デザインにこだわりたい方に</p>
-          </div>
-          <ul class="plan-features">
-            <li><span class="feat-check">✓</span> ページ数無制限</li>
-            <li><span class="feat-check">✓</span> フルオーダーデザイン</li>
-            <li><span class="feat-check">✓</span> お問い合わせフォーム</li>
-            <li><span class="feat-check">✓</span> SEO高度設定＋コンサル</li>
-            <li><span class="feat-check">✓</span> Google Analytics設定</li>
-            <li><span class="feat-check">✓</span> ブログ・更新機能</li>
-            <li><span class="feat-check">✓</span> EC・予約システム対応</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline full-width">お問い合わせ</a>
-        </div>
-      </div>
-      <div class="pricing-maintenance reveal">
-        <div class="maintenance-inner">
-          <div>
-            <h4>月額保守プラン</h4>
-            <p>公開後も安心の継続サポート。セキュリティ更新・コンテンツ修正・アクセスレポートをお届けします。</p>
-          </div>
-          <div class="maintenance-price">
-            <span>¥3,300<small>/月〜（税込）</small></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FAQ ========== -->
-  <section id="faq" class="section-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow light">FAQ</p>
-        <h2 class="section-title light">よくある質問</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-q">パソコンが苦手でも大丈夫ですか？<span class="faq-icon">+</span></button>
-          <div class="faq-a">
-            <p>もちろんです。ヒアリングはお電話・対面・Zoomなど、お客様が使いやすい方法で行います。制作に必要な情報は私たちがわかりやすく引き出しますので、専門知識は一切不要です。</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">制作期間はどのくらいかかりますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a">
-            <p>ライトプランで最短14日、スタンダードプランで3〜4週間が目安です。ヒアリング・素材収集がスムーズに進んだ場合はさらに短縮できます。お急ぎの場合はご相談ください。</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">写真や文章がなくても作れますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a">
-            <p>はい、ご準備がなくても大丈夫です。写真は著作権フリーの素材を使用し、文章（コピーライティング）もヒアリングをもとに私たちが代わりに作成します。追加費用は発生しません。</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">公開後に自分で更新できますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a">
-            <p>管理画面付き（CMS対応）プランをご選択いただければ、お客様ご自身でブログ記事やお知らせを更新いただけます。操作マニュアルと初期レクチャーも含まれています。</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">分割払いはできますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a">
-            <p>はい、2〜6回の分割払いに対応しています（手数料なし）。着手金50%・公開時50%の2回払いが最もご利用いただいているパターンです。ご相談ください。</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">他社で作ったサイトのリニューアルも対応できますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a">
-            <p>対応可能です。現行サイトの状況を確認し、デザインリニューアルのみ・コンテンツ追加のみなど、必要な範囲でご提案いたします。まずは無料診断をご利用ください。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="section-light">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">CONTACT</p>
-        <h2 class="section-title">まずは、話しましょう。</h2>
-        <p class="section-desc">費用のこと、期間のこと、なんでもお気軽に。<br>返信は翌営業日以内にお送りします。</p>
-      </div>
-      <div class="contact-wrap">
-        <form class="contact-form reveal" id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label>お名前 <span class="required">必須</span></label>
-              <input type="text" name="name" placeholder="山田 太郎" required>
-            </div>
-            <div class="form-group">
-              <label>会社名・屋号</label>
-              <input type="text" name="company" placeholder="株式会社〇〇">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>メールアドレス <span class="required">必須</span></label>
-              <input type="email" name="email" placeholder="info@example.com" required>
-            </div>
-            <div class="form-group">
-              <label>電話番号</label>
-              <input type="tel" name="tel" placeholder="090-0000-0000">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>お問い合わせ種別 <span class="required">必須</span></label>
-            <select name="type" required>
-              <option value="">選択してください</option>
-              <option>新規ホームページ制作</option>
-              <option>リニューアル</option>
-              <option>無料診断の申し込み</option>
-              <option>無料サンプル制作の依頼</option>
-              <option>料金について</option>
-              <option>その他</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>メッセージ <span class="required">必須</span></label>
-            <textarea name="message" rows="5" placeholder="ご質問・ご要望などお気軽にどうぞ。" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary full-width">送信する →</button>
-          <p class="form-note">送信後、自動返信メールが届きます。届かない場合は迷惑メールフォルダをご確認ください。</p>
-        </form>
-        <div class="contact-info reveal">
-          <div class="contact-detail">
-            <div class="contact-icon">✉</div>
-            <div>
-              <p class="ci-label">メール</p>
-              <p class="ci-value">info@ishihara-web.jp</p>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">🕐</div>
-            <div>
-              <p class="ci-label">営業時間</p>
-              <p class="ci-value">平日 9:00 〜 18:00</p>
-              <p class="ci-note">土日祝はメールのみ受付</p>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">📍</div>
-            <div>
-              <p class="ci-label">所在地</p>
-              <p class="ci-value">全国対応（オンライン）</p>
-            </div>
-          </div>
-          <div class="contact-promise">
-            <h4>ISHIHARAの約束</h4>
-            <ul>
-              <li>しつこい営業電話は一切しません</li>
-              <li>見積もりはすべて無料・明瞭会計</li>
-              <li>断られても嫌な顔はしません</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="logo">ISHIHARA<span class="logo-dot">.</span></a>
-          <p>ホームページのない営業所に、デジタルの窓を。</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h5>サービス</h5>
-            <ul>
-              <li><a href="#services">ホームページ制作</a></li>
-              <li><a href="#sample">無料サンプル制作</a></li>
-              <li><a href="#diagnosis">無料Web診断</a></li>
-              <li><a href="#pricing">料金プラン</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>会社情報</h5>
-            <ul>
-              <li><a href="#works">制作実績</a></li>
-              <li><a href="#faq">よくある質問</a></li>
-              <li><a href="#contact">お問い合わせ</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 ISHIHARA. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="#">プライバシーポリシー</a>
-          <a href="#">特定商取引法に基づく表記</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- モーダル -->
-  <div id="modal" class="modal">
-    <div class="modal-box">
-      <div class="modal-icon">✓</div>
-      <h3>送信完了しました！</h3>
-      <p>お問い合わせありがとうございます。<br>翌営業日以内にご返信いたします。</p>
-      <button class="btn btn-primary" onclick="document.getElementById('modal').classList.remove('active')">閉じる</button>
+    <div class="hero-metrics fade">
+      <div class="metric"><div class="metric-n"><span data-target="7">0</span><span class="u">日〜</span></div><div class="metric-l">最短納期</div></div>
+      <div class="metric"><div class="metric-n"><span data-target="29800">0</span><span class="u">円〜</span></div><div class="metric-l">買い切り制作費</div></div>
+      <div class="metric"><div class="metric-n"><span data-target="9800">0</span><span class="u">円〜</span></div><div class="metric-l">月額プラン</div></div>
+      <div class="metric"><div class="metric-n"><span class="serif" style="font-size:0.92em">無料</span></div><div class="metric-l">サンプル制作</div></div>
     </div>
   </div>
+  <div class="scroll-cue"><span>scroll</span><div class="bar"></div></div>
+</section>
 
-  <script src="script.js"></script>
+<!-- PAIN -->
+<section class="sec sec-tint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Reality</span>
+      <h2 class="h-sec"><span class="ja">こんなお悩み、</span>ありませんか？</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal"><span class="pain-q">Q</span><p><strong>Googleで検索されても出てこない。</strong>業種＋地域で探されているのに、ホームページがないから候補にすら上がらない。</p></div>
+      <div class="pain-card reveal"><span class="pain-q">Q</span><p><strong>連絡前に「ホームページで確認」される時代。</strong>情報が見つからないと、それだけで不安にさせて機会を逃している。</p></div>
+      <div class="pain-card reveal"><span class="pain-q">Q</span><p><strong>作ったけど反響がない。</strong>サイトはあるのに問い合わせにつながらない。何を直せばいいのか分からない。</p></div>
+      <div class="pain-card reveal"><span class="pain-q">Q</span><p><strong>パソコンが苦手で、何から始めればいいか分からない。</strong>専門用語ばかりで、相談するのもためらってしまう。</p></div>
+    </div>
+    <p class="pain-bridge reveal">その原因は、多くの場合「伝え方」と「設計」にあります。<br>Avenir Webは、<span class="leaf ja">設計とコピー</span><span class="ja">から見直して解決します。</span></p>
+  </div>
+</section>
+
+<!-- STRENGTH -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why Avenir Web</span>
+      <h2 class="h-sec">選ばれる<span class="ja">3つの理由</span></h2>
+    </div>
+    <div class="str-grid">
+      <div class="str-card reveal">
+        <div class="str-n">01</div>
+        <div class="str-ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>成果から逆算する設計</h3>
+        <p>「誰に何を伝え、どう行動してほしいか」を最初に定義。問い合わせまでの導線とコンテンツ構成を設計してから、デザインに入ります。</p>
+      </div>
+      <div class="str-card reveal">
+        <div class="str-n">02</div>
+        <div class="str-ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/></svg></div>
+        <h3>魅力を言葉にするコピー</h3>
+        <p>良いサービスも、言葉で伝わらなければ届きません。ヒアリングで強みと想いを引き出し、お客様に伝わるコピーに翻訳します。原稿がなくても大丈夫。</p>
+      </div>
+      <div class="str-card reveal">
+        <div class="str-n">03</div>
+        <div class="str-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>制作者が直接、伴走</h3>
+        <p>窓口は営業ではなく制作者本人。伝言ゲームがないから、要望が正確に届き、修正も速い。公開後の運用・改善まで一緒に走ります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec sec-tint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Service</span>
+      <h2 class="h-sec">できること</h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row reveal">
+        <div class="svc-idx">01</div>
+        <div class="svc-name">ホームページ制作</div>
+        <div class="svc-desc">業種を問わず、スマホでも美しいレスポンシブサイトをオリジナルで制作します。</div>
+        <div class="svc-tags"><span>オリジナル設計</span><span>スマホ対応</span><span>SEO基本</span></div>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-idx">02</div>
+        <div class="svc-name">無料サンプル制作</div>
+        <div class="svc-desc">発注前に実物のデザインを確認。気に入らなければ費用ゼロでキャンセルできます。</div>
+        <div class="svc-tags"><span>発注前に確認</span><span>3ページ分</span><span>修正無料</span></div>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-idx">03</div>
+        <div class="svc-name">SEO・集客支援</div>
+        <div class="svc-desc">Googleに見つけてもらう構造設計と、公開後の継続的な改善サポート。</div>
+        <div class="svc-tags"><span>キーワード戦略</span><span>GBP設定</span><span>解析レポート</span></div>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-idx">04</div>
+        <div class="svc-name">更新・保守管理</div>
+        <div class="svc-desc">セキュリティ更新、コンテンツ追加、障害監視まで。公開後も任せられます。</div>
+        <div class="svc-tags"><span>月額保守</span><span>更新代行</span><span>24h監視</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS preview -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;">
+      <div>
+        <span class="eyebrow">Samples</span>
+        <h2 class="h-sec">制作サンプル</h2>
+      </div>
+      <a href="works.html" class="btn btn-ghost">すべて見る <span class="arr">→</span></a>
+    </div>
+    <div class="sample-grid">
+      <div class="sample reveal">
+        <a class="sample-frame" href="https://avenirwebcom.github.io/oden-sample/" target="_blank" rel="noopener">
+          <span class="sample-genre">飲食・和食</span>
+          <span class="sample-live"><span class="blink"></span>LIVE</span>
+          <div class="frame-fallback"><span class="ff-title">おでん ゑびす</span><span class="ff-sub">受け継がれる、黄金の出汁。</span></div>
+          <iframe src="https://avenirwebcom.github.io/oden-sample/" title="おでん ゑびす サンプルサイト" loading="lazy" scrolling="no"></iframe>
+          <span class="frame-cover"></span>
+        </a>
+        <div class="sample-body">
+          <h3>おでん ゑびす</h3>
+          <p class="sample-desc">創業六十余年の老舗おでん店をイメージした和風サイト。落ち着いた配色と縦書きの見出しで「伝統の味」の世界観を表現しました。</p>
+          <div class="sample-tags"><span>和風デザイン</span><span>お品書き</span><span>店舗情報</span></div>
+          <a href="https://avenirwebcom.github.io/oden-sample/" target="_blank" rel="noopener" class="btn btn-leaf sample-link">サンプルを開く <span class="arr">→</span></a>
+        </div>
+      </div>
+      <div class="sample-soon reveal">
+        <span class="plus"></span>
+        <h4>Coming soon</h4>
+        <p>美容室・治療院・建設・小売など、さまざまな業種のサンプルを順次公開していきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-in reveal">
+      <h2>まずは、<span class="leaf ja">話しましょう。</span></h2>
+      <p>費用のこと、期間のこと、何から始めればいいか。返信は翌営業日以内。しつこい営業は一切しません。</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-onwhite btn-lg">無料で相談する <span class="arr">→</span></a>
+        <a href="pricing.html" class="btn btn-onborder btn-lg">料金を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <a href="index.html" class="brand">Avenir Web<span class="dot">.</span></a>
+        <p>ホームページのない営業所に、デジタルの窓を。中小企業・個人事業主のためのWeb制作。</p>
+      </div>
+      <div class="ftr-col"><h5>Service</h5><a href="index.html#services">ホームページ制作</a><a href="pricing.html">料金プラン</a><a href="contact.html">無料サンプル制作</a><a href="contact.html">無料Web診断</a></div>
+      <div class="ftr-col"><h5>Company</h5><a href="works.html">制作サンプル</a><a href="about.html">会社案内</a><a href="faq.html">よくある質問</a><a href="contact.html">お問い合わせ</a></div>
+      <div class="ftr-col"><h5>Contact</h5><a href="mailto:avenir.web.com@gmail.com">avenir.web.com@gmail.com</a><a href="#">平日 9:00〜18:00</a><a href="contact.html">全国対応（オンライン）</a></div>
+    </div>
+    <div class="ftr-bot"><p>© 2024 Avenir Web. All rights reserved.</p><div class="ftr-legal"><a href="#">プライバシーポリシー</a><a href="#">特定商取引法に基づく表記</a></div></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
