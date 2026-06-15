@@ -332,6 +332,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .price-amt .permo { font-size: 14px; color: var(--ink-mid); font-family: 'Noto Sans JP', sans-serif; align-self: flex-end; margin-bottom: 6px; }
 .price-quote { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 500; color: var(--green); letter-spacing: -0.01em; }
 
+/* subscription: no initial fee banner */
+.noinit-banner { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; background: var(--green); border-radius: 18px; padding: 24px 32px; margin-bottom: 32px; text-align: center; }
+.noinit-banner .nb-badge { display: inline-flex; align-items: baseline; gap: 4px; font-family: 'Fraunces', serif; color: #fff; }
+.noinit-banner .nb-badge .zero { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
+.noinit-banner .nb-badge .yen { font-size: 22px; font-weight: 500; }
+.noinit-banner .nb-text { color: #fff; }
+.noinit-banner .nb-text strong { display: block; font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+.noinit-banner .nb-text span { font-size: 13px; color: rgba(255,255,255,0.78); }
+.noinit-banner .nb-label { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: #8fd9af; }
+@media (max-width: 560px) { .noinit-banner { padding: 22px; } }
+
+/* highlight initial-fee line inside subscription cards */
+.init-free { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--green); background: var(--leaf-l); border: 1px solid rgba(61,166,113,0.25); border-radius: 100px; padding: 5px 12px; margin-bottom: 18px; }
+.init-free::before { content: '✓'; color: var(--leaf); font-weight: 800; }
+
 /* =============================================
    FLOW
    ============================================= */

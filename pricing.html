@@ -51,7 +51,7 @@
         <button data-set="subscription">サブスク型</button>
       </div>
     </div>
-    <p class="price-note-line reveal"><span class="leaf">買い切り型</span>＝一度の制作費でお渡し。&nbsp;/&nbsp;<span class="leaf">サブスク型</span>＝月額で制作・更新・運用までおまかせ。</p>
+    <p class="price-note-line reveal"><span class="leaf">買い切り型</span>＝一度の制作費でお渡し。&nbsp;/&nbsp;<span class="leaf">サブスク型</span>＝初期費用0円、月額のみで制作・更新・運用までおまかせ。</p>
 
     <!-- ONE-TIME -->
     <div class="price-set active" data-set="onetime">
@@ -101,11 +101,17 @@
 
     <!-- SUBSCRIPTION -->
     <div class="price-set" data-set="subscription">
+      <div class="noinit-banner reveal">
+        <span class="nb-label">Initial cost</span>
+        <span class="nb-badge"><span class="yen">¥</span><span class="zero">0</span></span>
+        <span class="nb-text"><strong>初期費用・制作費は、いただきません。</strong><span>お支払いは毎月の月額のみ。まとまった出費なしで、すぐに始められます。</span></span>
+      </div>
       <div class="price-grid">
         <div class="price-card reveal">
           <div class="price-name">Light</div>
           <div class="price-amt"><span class="cur">¥</span><span class="num sm">9,800</span><span class="permo">/月（税込）</span></div>
           <p class="price-tagline">名刺代わりに欲しいが、放置はしたくない方に</p>
+          <span class="init-free">初期費用 0円</span>
           <ul class="price-feats">
             <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>1ページまでのHP</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>スマホ / PC両対応</li>
@@ -121,6 +127,7 @@
           <div class="price-name">Standard</div>
           <div class="price-amt"><span class="cur">¥</span><span class="num sm">12,800</span><span class="permo">/月（税込）</span></div>
           <p class="price-tagline">きちんと集客を目的にする方に</p>
+          <span class="init-free">初期費用 0円</span>
           <ul class="price-feats">
             <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>ページ数無制限</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>メニュー等の更新（無制限）</li>
@@ -134,6 +141,7 @@
           <div class="price-name">Pro</div>
           <div class="price-amt"><span class="cur">¥</span><span class="num sm">15,800</span><span class="permo">/月（税込）</span></div>
           <p class="price-tagline">売り上げを伸ばしたい方に</p>
+          <span class="init-free">初期費用 0円</span>
           <ul class="price-feats">
             <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>SEO初期設定・継続更新</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>キャンペーン提案</li>
